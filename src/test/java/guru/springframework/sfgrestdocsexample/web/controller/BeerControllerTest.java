@@ -5,6 +5,8 @@ import guru.springframework.sfgrestdocsexample.domain.Beer;
 import guru.springframework.sfgrestdocsexample.repositories.BeerRepository;
 import guru.springframework.sfgrestdocsexample.web.model.BeerDto;
 import guru.springframework.sfgrestdocsexample.web.model.BeerStyleEnum;
+import org.hibernate.validator.internal.IgnoreForbiddenApisErrors;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -45,6 +47,7 @@ class BeerControllerTest {
     }
 
     @Test
+    @Disabled
     void saveNewBeer() throws Exception {
         BeerDto beerDto =  getValidBeerDto();
         String beerDtoJson = objectMapper.writeValueAsString(beerDto);
